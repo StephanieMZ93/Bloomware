@@ -4,36 +4,37 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 50%;
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
     border: 5px solid #73cbeb;
-    margin: 30px 30px;
-    padding: 30px 30px;
+    margin: 30px; /* Simplificado */
+    padding: 30px; /* Simplificado */
     border-radius: 20px;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 20px 20px;
-    padding: 20px 20px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px;
 }
 
 .header {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    position: relative; /* Para posicionar el botón de cerrar sesión */
 }
 
 .logo--img {
     width: 450px;
-    height: 200px;
-    height: auto;
+    height: auto; /* Altura automática para mantener la proporción */
+    max-width: 100%; /* Asegura que la imagen no se desborde en pantallas pequeñas */
 }
 
 .cerrar-sesion {
     background-color: #4cb5d6;
     position: absolute;
-    top: 100px;
-    right: 100px;
+    top: 20px;
+    right: 20px;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -46,7 +47,6 @@ body {
 .cerrar-sesion:hover {
     background-color: #0056b3;
 }
-
 
 .card-container {
     display: flex;
@@ -62,7 +62,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    align-items: center;
+    display: flex;        /* Añadido para alinear verticalmente */
+    flex-direction: column; /* Añadido para alinear verticalmente */
 }
 
 .card:hover {
@@ -70,22 +71,45 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.card a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    height: 100%;
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    display: flex;           /* Centrado flexible */
+    flex-direction: column;  /* Centrado flexible */
+    align-items: center;     /* Centrado horizontal */
+    justify-content: center; /* Centrado vertical */
+}
+
 .card img {
     width: 150px;
     height: 150px;
-    padding: 20px 20px;
-    align-items: center;
+    padding: 10px;
+    object-fit: contain;    /* Ajusta la imagen al tamaño del contenedor sin deformarla */
 }
 
 .card-content {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
+    flex-grow: 1;         /* Permite que el contenido se expanda para llenar el espacio restante */
 }
 
 .card-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
-    text-decoration: none;
+    margin: 0;            /* Elimina el margen inferior */
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .logo--img {
+        width: 300px;
+    }
+
+    .cerrar-sesion {
+        position: static; /* Elimina la posición absoluta en pantallas pequeñas */
+        margin-top: 10px;   /* Agrega un margen superior */
+    }
 }
