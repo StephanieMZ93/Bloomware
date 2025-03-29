@@ -10,11 +10,11 @@ $error_message = "";
 // Verificar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recoger los datos del formulario
-    $usuario = $_POST["email"]; // Corregido: usar "email" en lugar de "usnario"
+    $usuario = $_POST["email"];
     $password = $_POST["password"];
 
     // Validar las credenciales (ejemplo básico con sentencias preparadas)
-    $sql = "SELECT * FROM `administrador` WHERE email = ?"; // Corregido: Nombre de la tabla y uso de sentencias preparadas
+    $sql = "SELECT * FROM `administrador` WHERE email = ?";
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
@@ -29,10 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
 
         // Verificar la contraseña (USAR password_verify() en producción!)
-        if ($password == $row["Contraseña"]) { // Corregido: Verificar contraseña del administrador
+        if ($password == $row["Contraseña"]) {
             // Inicio de sesión exitoso
-            $_SESSION["usuario_id"] = $row["ID_Administrador"]; // Ajusta a tu schema
-            $_SESSION["usuario_nombre"] = $row["Nombre"]; // Ajusta a tu schema
+            $_SESSION["usuario_id"] = $row["ID_Administrador"];
+            $_SESSION["usuario_nombre"] = $row["Nombre"];
 
             // Redireccionar al usuario a la página principal
             header("Location: principal.php");
@@ -76,11 +76,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <label for="email" class="formulario__label-txt">Email</label>
                 <a href="#" class="icon-user"></a>
-                <input type="email" name="email" id="email" class="formulario__input-txt" maxlength="150" required value="smz021093@gmail.com">
+                <input type="email" name="email" id="email" class="formulario__input-txt" maxlength="150" required>
 
                 <label for="password" class="formulario__label-txt">Contraseña</label>
                 <a href="#" class="icon-key"></a>
-                <input type="password" name="password" id="password" class="formulario__input-txt" maxlength="8" required value = "Mazu83">
+                <input type="password" name="password" id="password" class="formulario__input-txt" maxlength="8" required>
 
                 <button type="submit" class="iniciar-sesion">
                     <a>Iniciar Sesión</a>
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="/JS/index.js"></script>
     
     <footer>
-        <p>&copy; 2025 Bloomware. Todos los derechos reservados.</p>
+        <p>© 2025 Bloomware. Todos los derechos reservados.</p>
     </footer>
 </body>
 
