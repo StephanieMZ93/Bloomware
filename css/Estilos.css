@@ -1,0 +1,74 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+    color: black;
+    border: 5px solid #73cbeb;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 80px;
+    padding: 30px 30px;
+    height: 80vh;
+    width: 85vw;
+}
+
+.Container {
+    height: 700vh;
+    width: 100vw;
+    padding: 20px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+
+.logo--img {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
+    background: white;
+    position: relative;
+}
+.header {
+    background-color: white;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.formulario {
+
+    justify-items: center;
+    box-align: horizontal;
+    align-items: center;
+}
+.formulario__label-txt {
+    font-size: 15px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+.formulario__input-txt {
+    background-color: #d9d9d9;
+    display: block;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #4cb5d6;
+    color:white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 100;
+    text-decoration: none;
+    display: block;
+    margin: 5px 70px;
+}
