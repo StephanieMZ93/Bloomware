@@ -1,7 +1,7 @@
 <?php
     $host = "localhost:3306";
     $user = "root";
-    $clave = "02S93m66n63.";
+    $clave = "";
     $bd = "bloomware";
 
     // Creación de la conexión a MySQL
