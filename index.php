@@ -91,7 +91,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="/JS/index.js"></script>
     
     <footer>
-        <p>© 2025 Bloomware. Todos los derechos reservados.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p><i>© 2025 Bloomware. Todos los derechos reservados.</i></p>
     </footer>
 </body>
 
