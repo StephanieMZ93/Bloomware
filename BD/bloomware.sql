@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 31-03-2025 a las 01:36:31
+-- Tiempo de generación: 07-04-2025 a las 01:37:36
 -- Versión del servidor: 9.1.0
 -- Versión de PHP: 8.3.14
 
@@ -54,14 +54,27 @@ INSERT INTO `administrador` (`ID_Administrador`, `Nombre`, `Apellidos`, `Email`,
 
 DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
-  `ID_Cliente` int NOT NULL,
-  `ID_Producto` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `ID_Cliente` int NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `ID_Producto` int NOT NULL,
   `Apellidos` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Telefono` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`ID_Cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`ID_Cliente`, `Nombre`, `ID_Producto`, `Apellidos`, `Email`, `Telefono`) VALUES
+(1, 'Nina', 2, 'Quiroga', 'ani-05@hotmail.com', '3132424236'),
+(2, 'Martin', 4, 'Vivas', 'Martin@hotmail.com', '3167800000'),
+(3, 'Antonio', 8, 'Cortes', 'antonioc@hotmail.com', '3125607928'),
+(4, 'Andrea', 8, 'Martinez', 'aandre.fff@hotmail.com', '3444446788'),
+(5, 'Aura', 11, 'Bermudez', 'auraa.0@hotmail.com', '3667778900'),
+(6, 'Lorena', 10, 'Cardona', 'Lorencar@hotmail.com', '360000000'),
+(7, 'Dora', 3, 'Cruz', 'doraz@hotmail.com', '3000009997');
 
 -- --------------------------------------------------------
 
@@ -71,15 +84,23 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 
 DROP TABLE IF EXISTS `empleado`;
 CREATE TABLE IF NOT EXISTS `empleado` (
-  `ID_Empleado` int NOT NULL,
+  `ID_Empleado` int NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Apellidos` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Telefono` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Cargo` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Contraseña` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`ID_Empleado`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Apellidos`, `Email`, `Telefono`, `Cargo`) VALUES
+(1, 'Adriana', 'Perez', 'adrip@bloom.com', '35444444', 'Asesor de ventas'),
+(2, 'Marina', 'Cruz', 'Maric@bloom.com', '3178000', 'Cajero'),
+(3, 'Luz', 'Diaz', 'Luzdiaz@bloom.com', '3125698', 'Lider de marketing');
 
 -- --------------------------------------------------------
 
@@ -126,14 +147,27 @@ INSERT INTO `producto` (`ID_Producto`, `Nombre_Producto`, `Cantidad`, `precio`, 
 
 DROP TABLE IF EXISTS `proveedores`;
 CREATE TABLE IF NOT EXISTS `proveedores` (
-  `Nit_Proveedor` int NOT NULL,
+  `Nit_proveedor` bigint NOT NULL,
   `Nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Direccion` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Telefono` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Categoria` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `Email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  PRIMARY KEY (`Nit_Proveedor`)
+  PRIMARY KEY (`Nit_proveedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`Nit_proveedor`, `Nombre`, `Direccion`, `Telefono`, `Categoria`, `Email`) VALUES
+(860038671, 'Productos De Belleza Ana María S.a.s.', 'KR 62 14 - 75', '3173716780', 'Fabricante', 'servicioalcliente@cosmeticosanamaria.com'),
+(8002128402, 'Maybelline Colombia', ' Autopista norte # 123 - 60 Piso 95', '6511300', 'Fabricante', 'notificaciones.loreal@loreal.com'),
+(8002480925, 'COSMETICOS MARLIOU PARIS LTDA', 'CARRERA 19B # 168-50', '6789851', 'Fabricante', 'servicioalcliente@cosmeticosmarliou.com'),
+(8110083834, 'COSMETICOS SAMY SA', 'KR 51 No 14-52', '4487269', 'Fabricante', 'samy@samycosmetics.com'),
+(8600299972, 'Laboratorios de Cosméticos Vogue S.A.S', ' Kilómetro 7 vía Autopista Medellín – Par Industrial Interpa', '443 4660', 'Distribuidor', 'atc@loreal.com.co'),
+(8909050321, 'Beautyholics', ' Calle 10 # 58-59', '018000914990', 'Distribuidor', 'servicio.cliente@prebel.com.co'),
+(9004647945, 'INVERSIONES KAUTIVA S.A.S.', 'Cra 54 # 46 – 71  Loc 99 79', '4482015', 'Distribuidor', 'administracion@inversioneskautiva.com');
 
 -- --------------------------------------------------------
 
