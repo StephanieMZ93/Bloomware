@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 22-04-2025 a las 20:47:58
+-- Tiempo de generación: 23-04-2025 a las 03:45:39
 -- Versión del servidor: 9.1.0
 -- Versión de PHP: 8.3.14
 
@@ -168,24 +168,6 @@ INSERT INTO `proveedores` (`Nit_proveedor`, `Nombre`, `Direccion`, `Telefono`, `
 (8600299972, 'Laboratorios de Cosméticos Vogue S.A.S', ' Kilómetro 7 vía Autopista Medellín – Par Industrial Interpa', '443 4660', 'Distribuidor', 'atc@loreal.com.co'),
 (8909050321, 'Beautyholics', ' Calle 10 # 58-59', '018000914990', 'Distribuidor', 'servicio.cliente@prebel.com.co'),
 (9004647945, 'INVERSIONES KAUTIVA S.A.S.', 'Cra 54 # 46 – 71  Loc 99 79', '4482015', 'Distribuidor', 'administracion@inversioneskautiva.com');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reporte`
---
-
-DROP TABLE IF EXISTS `reporte`;
-CREATE TABLE IF NOT EXISTS `reporte` (
-  `ID_Reporte` int NOT NULL AUTO_INCREMENT,
-  `Fecha y hora` date NOT NULL,
-  `ID_Clientes` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `ID_Productos` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `ID_Usuario` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Nit_Proveedor` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Administrador_ID_Administrador` int NOT NULL,
-  PRIMARY KEY (`ID_Reporte`,`Administrador_ID_Administrador`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- --------------------------------------------------------
 
