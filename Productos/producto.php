@@ -22,7 +22,7 @@
                 <fieldset>
                     <legend>Registro de Producto</legend>
                     <label for="" class="formulario__label-txt">ID Producto</label>
-                    <br> <input type="Text" class="formulario__input-txt" name:"Nombreproducto" maxlength="25" required> <br>
+                    <br> <input type="Text" class="formulario__input-txt" name:"Nombre_producto" maxlength="25" required> <br>
                     <label for="Nombreproducto" class="formulario__label-txt">Nombre Producto</label>
                     <br> <input type="text" class="formulario__input-txt" name:"Cantidad" maxlength="30" required> <br>
                     <label for="Cantidad" class="formulario__label-txt">Cantidad</label>

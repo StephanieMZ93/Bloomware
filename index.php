@@ -2,7 +2,7 @@
 session_start();
 
 // Incluir el archivo de conexión a la base de datos
-include("conexion.php");
+include ("BD/conexion.php");
 
 // Inicializar variables para mensajes de error
 $error_message = "";

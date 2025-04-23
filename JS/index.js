@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (username === "ejemplo@gmail.com" && password === "123456.") {
             // Redireccionar a la página principal (como en tu botón)
-            window.location.href = "http://127.0.0.1:5500/principal.html"; 
+            window.location.href = "http://192.168.80.10/Bloomware/principal.php"; 
             alert("Inicio de sesión exitoso (simulado)");
         } else {
             alert("Credenciales incorrectas. Intente nuevamente.");

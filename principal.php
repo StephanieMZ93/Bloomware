@@ -28,7 +28,7 @@ if (!isset($_SESSION["usuario_id"])) {
 
         <div class="card-container">
             <div class="card">
-                <a href="#">
+                <a href="/Usuarios/usuarios.php">
                     <img src="img/usuario.png" alt="Usuarios">
                     <div class="card-content">
                         <h2 class="card-title">Usuarios</h2>
@@ -36,7 +36,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 </a>
             </div>
             <div class="card">
-                <a href="#">
+                <a href="/Proveedores/proveedores.php">
                     <img src="img/Proveedores.png" alt="Proveedores">
                     <div class="card-content">
                         <h2 class="card-title">Proveedores</h2>
@@ -44,7 +44,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 </a>
             </div>
             <div class="card">
-                <a href="#">
+                <a href="/Productos/producto.php">
                     <img src="img/Productos.png" alt="Productos">
                     <div class="card-content">
                         <h2 class="card-title">Productos</h2>
@@ -52,7 +52,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 </a>
             </div>
             <div class="card">
-                <a href="#">
+                <a href="/clientes/cliente.php">
                     <img src="img/Clientes.png" alt="Clientes">
                     <div class="card-content">
                         <h2 class="card-title">Clientes</h2>

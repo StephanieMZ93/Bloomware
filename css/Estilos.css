@@ -72,3 +72,72 @@ button {
     display: block;
     margin: 5px 70px;
 }
+
+/* Dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+        padding: 20px;
+        height: auto;
+        width: 95vw;
+        border-width: 3px;
+    }
+
+    .Container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .logo--img {
+        width: 200px;
+        height: auto;
+    }
+
+    button {
+        margin: 10px auto;
+        padding: 8px;
+        width: 80%;
+    }
+
+    .formulario__input-txt {
+        width: 90%;
+        font-size: 0.9em;
+    }
+
+    .formulario__label-txt {
+        font-size: 13px;
+    }
+}
+
+/* Tablets (pantallas medianas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        margin: 20px;
+        padding: 25px;
+        height: auto;
+        width: 90vw;
+    }
+
+    .Container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .logo--img {
+        width: 250px;
+        height: auto;
+    }
+
+    button {
+        width: 60%;
+        margin: 10px auto;
+    }
+
+    .formulario__input-txt {
+        width: 85%;
+    }
+}
