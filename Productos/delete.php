@@ -1,5 +1,5 @@
 <?php
-require 'conexion.php';
+require 'Productos/conexion.php';
 
 if (isset($_GET['delete_ID_Producto'])) {
     $delete_id = $_GET['delete_ID_Producto'];

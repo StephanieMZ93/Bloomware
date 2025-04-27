@@ -1,0 +1,329 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8f7; /* Fondo general suave */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo base para AMBOS contenedores */
+.container {
+    max-width: 900px; 
+    margin: 30px auto; /* Centrado horizontal, margen vertical */
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del formulario */
+.form-container {
+    /max-width: 700px; 
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    max-width: 1100px; 
+    margin: 30px auto;
+}
+
+/* Encabezado dentro de .form-container */
+.encabezado {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo--img {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Estilos del Formulario (dentro de .form-container) */
+.formulario fieldset {
+    border: 1px solid #d1d1d1;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+}
+.formulario legend {
+    font-weight: bold; padding: 0 10px; font-size: 1.3em; color: #0056b3;
+}
+.formulario label {
+    display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold; font-size: 0.95em; color: #555;
+}
+.formulario input[type="text"],
+.formulario input[type="number"],
+.formulario input[type="date"] {
+    width: 100%; padding: 10px 12px; margin-bottom: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; background-color: #fff; transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.formulario input[type="text"]:focus,
+.formulario input[type="number"]:focus,
+.formulario input[type="date"]:focus {
+    border-color: #007bff; outline: none; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+.btn-registro {
+    display: block; width: fit-content; margin: 20px auto 0; padding: 12px 30px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; font-weight: bold; text-decoration: none; transition: background-color 0.3s ease;
+}
+.btn-registro:hover {
+    background-color: #218838;
+}
+
+/* Título "Productos Existentes" */
+.table-container h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+/* Estilos de la Tabla  */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    font-size: 0.95em;
+    table-layout: fixed;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 14px 12px;
+    text-align: left;
+    vertical-align: middle;
+    /* Para manejo de texto largo */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+th {
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap; /* Evita que el texto del encabezado se parta */
+    text-align: center;
+}
+
+th:last-child { 
+    text-align: center;
+}
+
+.table-container th:nth-child(1), /* ID Producto */
+.table-container td:nth-child(1) {
+     width: 5%;
+     text-align: center;
+}
+.table-container th:nth-child(2), /* Nombre Producto */
+.table-container td:nth-child(2) {
+     width: 25%;
+}
+.table-container th:nth-child(3), /* Cantidad */
+.table-container td:nth-child(3) {
+     width: 8%;
+     text-align: right;
+}
+.table-container th:nth-child(4), /* Precio */
+.table-container td:nth-child(4) {
+     width: 10%;
+     text-align: right;
+}
+.table-container th:nth-child(5), /* Categoría */
+.table-container td:nth-child(5) {
+     width: 12%;
+}
+.table-container th:nth-child(6), /* Lote */
+.table-container td:nth-child(6) {
+     width: 12%;
+     text-align: right;
+}
+.table-container th:nth-child(7), /* Fecha Vencimiento */
+.table-container td:nth-child(7) {
+     width: 10%;
+     text-align: right;
+}
+.table-container th:last-child, /* Acciones */
+.table-container td:last-child {
+    width: 18%; /* Ancho para botones */
+    text-align: center;
+    white-space: nowrap; /* Mantiene botones en una línea */
+}
+
+/* Estilos generales de filas */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos Botones Tabla */
+tbody td button {
+    display: inline-block; 
+    padding: 5px 10px; 
+    font-size: 0.85em; 
+    margin: 2px 3px; 
+    cursor: pointer; 
+    border: 1px solid transparent; 
+    border-radius: 4px; 
+    min-width: 75px; 
+    text-align: center; 
+    transition: opacity 0.2s ease;
+}
+tbody td button:hover { 
+    opacity: 0.8; 
+}
+tbody td button:first-of-type { /* Eliminar */
+    background-color: #f8d7da; 
+    border-color: #f5c6cb; 
+    color: #721c24;
+}
+tbody td button:last-of-type { /* Actualizar */
+    background-color: #cce5ff; 
+    border-color: #b8daff; 
+    color: #004085;
+}
+
+/* --- Media Queries para Responsividad --- */
+
+@media (max-width: 1200px) { /* Pantallas medianas-grandes */
+    .table-container {
+         max-width: 95%; /* Tabla usa más % */
+    }
+}
+
+@media (max-width: 768px) { /* Tablets */
+    .container { /* Aplica a ambos contenedores */
+        width: 95%;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        max-width: none;
+    }
+    .logo--img { 
+        max-width: 150px; 
+    }
+    .formulario fieldset { 
+        padding: 15px 20px; 
+    }
+    .formulario input[type="text"], .formulario input[type="number"], .formulario input[type="date"], .btn-registro { 
+        font-size: 0.95em; 
+    }
+    .btn-registro { 
+        padding: 10px 25px; 
+    }
+    .table-container h2 { 
+        font-size: 1.4em; 
+    }
+    .formulario legend { 
+        font-size: 1.2em; 
+    }
+
+    /* Tabla en tablet */
+    .table-container table, th, td { 
+        font-size: 0.9em; 
+    }
+    th, td { 
+        padding: 10px 8px; 
+    }
+    tbody td button { 
+        padding: 4px 8px; 
+        font-size: 0.8em; 
+        min-width: 65px; 
+    }
+
+    /* Resetear anchos de columna en tablet */
+    .table-container th:nth-child(n),
+    .table-container td:nth-child(n) {
+        width: auto;
+        text-align: inherit; 
+        white-space: normal; * Permitir wrap si quitas anchos */
+    } 
+    .table-container th, .table-container th:last-child { 
+        text-align: center; 
+    }  
+    
+    .table-container td:last-child { 
+        text-align: center; } 
+}
+
+@media (max-width: 480px) { /* Móviles */
+    .container { padding: 15px; 
+    }
+    .logo--img { max-width: 120px; 
+    }
+    .formulario label { font-size: 0.9em; 
+    }
+    .btn-registro { 
+        width: 100%; 
+        padding: 12px; 
+        font-size: 1em; 
+    }
+    .table-container h2 { 
+        font-size: 1.2em; 
+    }
+    .formulario legend { 
+        font-size: 1.1em; 
+    }
+
+    /* Tabla transformada en bloques */
+    .table-container table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    .table-container table { box-shadow: none; 
+        border: none; 
+    } 
+    thead tr { 
+        position: absolute; 
+        top: -9999px; 
+        left: -9999px; 
+    }
+    tr { border: 1px solid #ccc; 
+        margin-bottom: 15px; 
+        background-color: #fff; 
+    }
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding: 10px 10px 10px 50%;
+        text-align: right;
+        white-space: normal;
+        min-height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    td:last-child { 
+        border-bottom: none; 
+    }
+    td:before {
+        content: attr(data-label); 
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: #555;
+    }
+    /* Celda de botones en móvil */
+    td:last-child {
+        padding-left: 10px !important;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    td:last-child:before { content: ""; display: none; }
+    tbody td button {
+       padding: 8px 12px;
+       font-size: 0.9em;
+       flex-grow: 1;
+       max-width: 48%;
+       margin: 3px;
+    }
+}

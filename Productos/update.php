@@ -1,5 +1,5 @@
 <?php
-require 'conexion.php';
+require 'Productos/conexion.php';
 
 if (isset($_POST['update'])) {
     $update_ID_Producto = $_POST['update_ID_Producto'];

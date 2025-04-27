@@ -1,6 +1,6 @@
 <?php
 // Archivo: create.php
-require 'conexion.php'; // Incluir conexión a la base de datos
+require 'Productos/conexion.php'; // Incluir conexión a la base de datos
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //seguridad de los datos del formulario

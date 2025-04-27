@@ -67,5 +67,5 @@ function cerrarFormularioActualizar() {
 }
 
 function abrirInicio(){
-    window.location.href = "/BLOOMWARE/principal.php";
+    window.location.href = "productos/producto.php";
 }
