@@ -2,11 +2,9 @@
 session_start();
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION["usuario_id"])) {
-    // Si no ha iniciado sesión, redirigir al formulario de inicio de sesión (index.php)
     header("Location: index.php");
-    exit(); // Detener la ejecución del script después de la redirección
+    exit();
 }
-// Si el usuario ha iniciado sesión, se muestra la página principal
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +15,7 @@ if (!isset($_SESSION["usuario_id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bloomware - Interfaz Principal</title>
     <link rel="stylesheet" href="css/IPrincipal.css" />
-    <style>
-
-    </style>
+    
 </head>
 
 <body>
@@ -30,45 +26,69 @@ if (!isset($_SESSION["usuario_id"])) {
         </header>
 
         <div class="card-container">
+
             <!-- Tarjeta Usuarios -->
             <div class="card">
-                <a href="Usuarios/usuarios.php">
-                    <img src="img/usuario.png" alt="Usuarios">
-                    <div class="card-content">
-                        <h2 class="card-title">Usuarios</h2>
+                <img src="img/usuario.png" alt="Usuarios">
+                <div class="card-content">
+                    <h2 class="card-title">Usuarios</h2>
+                    <div class="card-actions">
+                        <a href="Usuarios/usuarios.php?view=form" class="action-link">Formulario</a>
+                        <a href="Usuarios/usuarios.php?view=table" class="action-link">Ver Tabla</a>
                     </div>
-                </a>
+                </div>
             </div>
+
             <!-- Tarjeta Proveedores -->
             <div class="card">
-                <a href="Proveedores/proveedores.php">
-                    <img src="img/Proveedores.png" alt="Proveedores">
-                    <div class="card-content">
-                        <h2 class="card-title">Proveedores</h2>
+                <img src="img/Proveedores.png" alt="Proveedores">
+                <div class="card-content">
+                    <h2 class="card-title">Proveedores</h2>
+                    <div class="card-actions">
+                        <a href="Proveedores/proveedores.php?view=form" class="action-link">Formulario</a>
+                        <a href="Proveedores/proveedores.php?view=table" class="action-link">Ver Tabla</a>
                     </div>
-                </a>
+                </div>
             </div>
             <!-- Tarjeta Productos -->
             <div class="card">
-                <a href="Productos/producto.php">
-                    <img src="img/Productos.png" alt="Productos">
-                    <div class="card-content">
-                        <h2 class="card-title">Productos</h2>
+                <img src="img/Productos.png" alt="Productos">
+                <div class="card-content">
+                    <h2 class="card-title">Productos</h2>
+                    <!-- Enlaces de acciones -->
+                    <div class="card-actions">
+                        <a href="Productos/producto.php" class="action-link">Formulario</a> 
+                        <a href="Productos/existentes.php" class="action-link">Ver productos existentes</a> 
                     </div>
-                </a>
+                </div>
             </div>
+
             <!-- Tarjeta Clientes -->
             <div class="card">
-                <a href="clientes/cliente.php">
-                    <img src="img/Clientes.png" alt="Clientes">
-                    <div class="card-content">
-                        <h2 class="card-title">Clientes</h2>
+                <img src="img/Clientes.png" alt="Clientes">
+                <div class="card-content">
+                    <h2 class="card-title">Clientes</h2>
+                    <div class="card-actions">
+                        <a href="clientes/cliente.php?view=form" class="action-link">Formulario</a>
+                        <a href="clientes/cliente.php?view=table" class="action-link">Ver Tabla</a>
                     </div>
-                </a>
+                </div>
             </div>
+
+        </div> 
+
+    </div> 
+
+    <!-- === ESTRUCTURA DEL MODAL  -->
+ 
+    <div id="productTableModal" class="modal-overlay">
+        <div class="modal-content"> 
+
+            <!-- Botón para cerrar el modal -->
+            <button id="closeProductTableBtn" class="modal-close-btn">×</button> <!-- Usar × HTML entity -->
         </div>
     </div>
-    <script src="JS/principal.js"></script>
-</body>
 
+    <script src="js/Modal.js"></script>
+</body>
 </html>
