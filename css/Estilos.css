@@ -1,78 +1,97 @@
-body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: white;
-    color: black;
-    border: 5px solid #73cbeb;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 30px 80px;
-    padding: 30px 30px;
-    height: 80vh;
-    width: 85vw;
-}
+ .error-message {
+            background-color: #ffdddd;
+            border: 1px solid #f44336;
+            color: #f44336;
+            /* Un rojo más oscuro para el texto */
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9em;
+        }
 
-.Container {
-    height: 700vh;
-    width: 100vw;
-    padding: 20px 20px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    position: relative;
-}
+        /* Puedes añadir más estilos aquí o en Estilos.css */
+        body {
+            font-family: Arial, sans-serif;
+            /* Un ejemplo de fuente base */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            /* Un color de fondo suave */
+        }
 
-.logo--img {
-    width: 300px;
-    height: 100px;
-    margin-bottom: 10px;
-    background: white;
-    position: relative;
-}
-.header {
-    background-color: white;
-    color: white;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.formulario {
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            /* Ancho máximo para el contenedor del formulario */
+            text-align: center;
+            /* Centra el logo y el formulario */
+        }
 
-    justify-items: center;
-    box-align: horizontal;
-    align-items: center;
-}
-.formulario__label-txt {
-    font-size: 15px;
-    font-family: 'Arial Narrow Bold', sans-serif;
-}
+        .logo--img {
+            max-width: 150px;
+            /* Ajusta según el tamaño de tu logo */
+            margin-bottom: 20px;
+        }
 
-.formulario__input-txt {
-    background-color: #d9d9d9;
-    display: block;
-    border-radius: 8px;
-    font-size: 1em;
-}
+        .Formulario {
+            display: flex;
+            flex-direction: column;
+        }
 
-button {
-    background-color: #4cb5d6;
-    color:white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 10px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-weight: 100;
-    text-decoration: none;
-    display: block;
-    margin: 5px 70px;
-}
+        .formulario__label-txt {
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
 
+        .formulario__input-txt {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .iniciar-sesion {
+            background-color: #5cb85c;
+            /* Un color verde para el botón */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .iniciar-sesion:hover {
+            background-color: #4cae4c;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        /* Iconos (ejemplo muy básico, necesitarás tu Font.css para esto) */
+        .icon-user::before,
+        .icon-key::before {
+            /* Aquí iría la definición de tus iconos de Font.css */
+            /* Ejemplo: font-family: 'tu-fuente-de-iconos'; content: '\e001'; */
+            margin-right: 5px;
+        }
+        
 /* Dispositivos móviles (pantallas pequeñas) */
 @media (max-width: 600px) {
     body {

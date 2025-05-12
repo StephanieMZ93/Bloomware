@@ -56,13 +56,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_ID_Producto']))
                 Categoria = ?,
                 Lote = ?,
                 Fecha_Vencimiento = ?
-            WHERE ID_Producto = ?"; // Condición WHERE
+            WHERE ID_Producto = ?"; 
 
-    // 1. Preparar
+    // Preparar
     $stmt = mysqli_prepare($conn, $sql);
 
     if ($stmt) {
-        // 2. Vincular parámetros 
+        // Vincular parámetros 
         mysqli_stmt_bind_param($stmt, "sidsisi", // s(nombre), i(cantidad), d(precio), s(cat), s(lote), s(fecha), i(ID WHERE)
             $update_Nombre_Producto,
             $update_Cantidad,
@@ -73,9 +73,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_ID_Producto']))
             $update_ID_Producto
         );
 
-        // 3. Ejecutar
+        //  Ejecutar
         if (mysqli_stmt_execute($stmt)) {
-            header("Location: existentes.php?mensaje=" . urlencode("¡Producto (ID: " . $update_ID_Producto . ") actualizado exitosamente!"));
+            header("Location: read.php?mensaje=" . urlencode("¡Producto (ID: " . $update_ID_Producto . ") actualizado exitosamente!"));
             exit;
         } else {
             $errorParams = http_build_query([
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_ID_Producto']))
             exit;
         }
 
-        // 4. Cerrar sentencia
+        // Cerrar sentencia
         mysqli_stmt_close($stmt);
 
     } else {
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_ID_Producto']))
     }
 
 } else {
-    // Solicitud inválida: Redirigir a la PÁGINA DEL FORMULARIO con error
+    // Redirigir a la PÁGINA DEL FORMULARIO con error
     header('Location: producto.php?error=' . urlencode('Solicitud inválida para actualizar.'));
     exit;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 23-04-2025 a las 03:45:39
+-- Tiempo de generación: 11-05-2025 a las 23:30:24
 -- Versión del servidor: 9.1.0
 -- Versión de PHP: 8.3.14
 
@@ -24,177 +24,105 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `administrador`
+-- Estructura de tabla para la tabla `detalle_venta`
 --
 
-DROP TABLE IF EXISTS `administrador`;
-CREATE TABLE IF NOT EXISTS `administrador` (
-  `ID_Administrador` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Apellidos` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Telefono` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Contraseña` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  PRIMARY KEY (`ID_Administrador`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
-
---
--- Volcado de datos para la tabla `administrador`
---
-
-INSERT INTO `administrador` (`ID_Administrador`, `Nombre`, `Apellidos`, `Email`, `Telefono`, `Contraseña`) VALUES
-(1, 'Stephanie', 'Martinez', 'smz021093@gmail.com', '3116250040', 'Mazu93.'),
-(2, 'Marcela', 'Quiroga', 'marceq0725@gmail.com', '3507740524', 'Marce123');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cliente`
---
-
-DROP TABLE IF EXISTS `cliente`;
-CREATE TABLE IF NOT EXISTS `cliente` (
-  `ID_Cliente` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `ID_Producto` int NOT NULL,
-  `Apellidos` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Telefono` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  PRIMARY KEY (`ID_Cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
-
---
--- Volcado de datos para la tabla `cliente`
---
-
-INSERT INTO `cliente` (`ID_Cliente`, `Nombre`, `ID_Producto`, `Apellidos`, `Email`, `Telefono`) VALUES
-(1, 'Nina', 2, 'Quiroga', 'ani-05@hotmail.com', '3132424236'),
-(2, 'Martin', 4, 'Vivas', 'Martin@hotmail.com', '3167800000'),
-(3, 'Antonio', 8, 'Cortes', 'antonioc@hotmail.com', '3125607928'),
-(4, 'Andrea', 8, 'Martinez', 'aandre.fff@hotmail.com', '3444446788'),
-(5, 'Aura', 11, 'Bermudez', 'auraa.0@hotmail.com', '3667778900'),
-(6, 'Lorena', 10, 'Cardona', 'Lorencar@hotmail.com', '360000000'),
-(7, 'Dora', 3, 'Cruz', 'doraz@hotmail.com', '3000009997');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `empleado`
---
-
-DROP TABLE IF EXISTS `empleado`;
-CREATE TABLE IF NOT EXISTS `empleado` (
-  `ID_Empleado` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Apellidos` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Telefono` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Cargo` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  PRIMARY KEY (`ID_Empleado`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
-
---
--- Volcado de datos para la tabla `empleado`
---
-
-INSERT INTO `empleado` (`ID_Empleado`, `Nombre`, `Apellidos`, `Email`, `Telefono`, `Cargo`) VALUES
-(1, 'Adriana', 'Perez', 'adrip@bloom.com', '35444444', 'Asesor de ventas'),
-(2, 'Marina', 'Cruz', 'Maric@bloom.com', '3178000', 'Cajero'),
-(3, 'Luz', 'Diaz', 'Luzdiaz@bloom.com', '3125698', 'Lider de marketing');
+DROP TABLE IF EXISTS `detalle_venta`;
+CREATE TABLE IF NOT EXISTS `detalle_venta` (
+  `id_detalle` int NOT NULL AUTO_INCREMENT,
+  `id_venta` int DEFAULT NULL,
+  `id_producto` int DEFAULT NULL,
+  `cantidad` int DEFAULT NULL,
+  `precio` decimal(10,2) DEFAULT NULL,
+  `subtotal` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id_detalle`),
+  KEY `fk_detalle_venta_venta` (`id_venta`),
+  KEY `fk_detalle_venta_producto` (`id_producto`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `producto`
 --
-
 DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
   `ID_Producto` int NOT NULL AUTO_INCREMENT,
-  `Nombre_Producto` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `Nombre_Producto` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `Cantidad` int NOT NULL,
   `Precio` decimal(10,0) DEFAULT NULL,
   `Categoria` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Lote` varchar(10) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `Lote` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `Fecha_Vencimiento` date NOT NULL,
-  `Administrador_ID_Administrador` int NOT NULL,
   PRIMARY KEY (`ID_Producto`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`ID_Producto`, `Nombre_Producto`, `Cantidad`, `Precio`, `Categoria`, `Lote`, `Fecha_Vencimiento`, `Administrador_ID_Administrador`) VALUES
-(1, 'Brillo_Essence_Juicy_Bomb_Shiny', 10, 8500, 'brillo', '20250115A', '2026-05-11', 1),
-(2, 'Pestañina_Vogue_Curvas_Perfectas', 9, 24950, 'pestañinas', '20241025B', '2025-12-19', 2),
-(3, 'Polvo_Suelto_Samy_Translucido_Matte_Touch', 8, 19950, 'polvo', '20240926C', '2026-09-26', 2),
-(4, 'Labial_Ruby_Rose_Lip_Oil_Sandía', 4, 13560, 'brillo', '20268967B', '2025-05-13', 2),
-(5, 'Pestañina_Maybelline_Sky_High_Black_Waterproo', 7, 64950, 'pestañinas', '20267936A', '2026-11-23', 2),
-(6, 'Polvo_Compacto_Ana_María_Spf_25_Avellana', 15, 27950, 'pestañinas', '20368946N', '2025-12-08', 2),
-(7, 'Rubor_Barra_Essence_Baby_Got_Blush_Tn10', 6, 16500, 'Maquillaje_Facial', '21348046F', '2025-03-08', 2),
-(8, 'Lapiz_Essence_Designer_Brown_Cejas', 1, 10950, 'Lapiz', '26789059F', '2026-08-08', 2),
-(9, 'Polvo_Compacto_Aclarante_Ana_María_Spf_25_Ave', 15, 32950, 'polvo compacto', '23649047F', '2026-12-05', 2),
-(10, 'Labial_Vogue_Líquido_Colorissimo_Extra_Brillo', 5, 14950, 'labiales_liquidos', '20316798B', '2026-05-29', 2),
-(11, 'Brillo_Maybelline_Lip_Lifter_Gloss_Petal', 5, 60950, 'brillo', '20316798B', '2026-01-29', 2),
-(12, 'BrPolvo_Compacto_Maybelline_Super_Natural_Bei', 12, 35950, 'polvos', '20786708C', '2024-04-29', 2);
+INSERT INTO `producto` (`ID_Producto`, `Nombre_Producto`, `Cantidad`, `Precio`, `Categoria`, `Lote`, `Fecha_Vencimiento`) VALUES
+(1, 'Brillo Essence Bomb Shiny', 10, 8500, 'Maquillaje de labios', '20250115A', '2026-05-11'),
+(2, 'Pestañina Vogue Curvas Perfectas', 9, 24950, 'Maquillaje de ojos', '20241025B', '2025-12-19'),
+(3, 'Polvo Suelto Samy Translucido Matte', 8, 19950, 'Maquillaje Facial', '20240926C', '2026-09-26'),
+(4, 'Labial Ruby Rose Lip Oil Sandía', 4, 13560, 'Maquillaje de labios', '20268967B', '2025-05-13'),
+(5, 'Pestañina Maybelline Sky High Waterproof', 7, 64950, 'Maquillaje de ojos', '20267936A', '2026-11-23'),
+(6, 'Polvo Compacto Ana María Spf 25 Avellana', 15, 27950, 'Maquillaje de ojos', '20368946N', '2025-12-08'),
+(7, 'Rubor Barra Essence Baby Tn10', 6, 16500, 'Maquillaje Facial', '21348046F', '2025-03-08'),
+(8, 'Lapiz Essence Designer Brown Cejas', 1, 10950, 'Maquillaje cejas', '26789059F', '2026-08-08'),
+(9, 'Polvo Compacto Aclarante Ana Maria SPF25 Ave', 15, 32950, 'Maquillaje Facial', '23649047F', '2026-12-05'),
+(10, 'Labial Vogue Liq Colorissimo Extra Brillo', 5, 14950, 'Maquillaje de labios', '20316798B', '2026-05-29'),
+(11, 'Brillo Maybelline Lip Lifter Gloss Petal', 5, 60950, 'Maquillaje de labios', '20316798B', '2026-01-29'),
+(12, 'BrPolvo Compacto Maybelline Super Nat Beige', 12, 35950, 'Maquillaje Facial', '20786708C', '2024-04-29');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `proveedores`
+-- Estructura de tabla para la tabla `roles`
 --
 
-DROP TABLE IF EXISTS `proveedores`;
-CREATE TABLE IF NOT EXISTS `proveedores` (
-  `Nit_proveedor` bigint NOT NULL,
-  `Nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Direccion` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Telefono` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Categoria` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  PRIMARY KEY (`Nit_proveedor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `rol` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `proveedores`
+-- Volcado de datos para la tabla `roles`
 --
 
-INSERT INTO `proveedores` (`Nit_proveedor`, `Nombre`, `Direccion`, `Telefono`, `Categoria`, `Email`) VALUES
-(860038671, 'Productos De Belleza Ana María S.a.s.', 'KR 62 14 - 75', '3173716780', 'Fabricante', 'servicioalcliente@cosmeticosanamaria.com'),
-(8002128402, 'Maybelline Colombia', ' Autopista norte # 123 - 60 Piso 95', '6511300', 'Fabricante', 'notificaciones.loreal@loreal.com'),
-(8002480925, 'COSMETICOS MARLIOU PARIS LTDA', 'CARRERA 19B # 168-50', '6789851', 'Fabricante', 'servicioalcliente@cosmeticosmarliou.com'),
-(8110083834, 'COSMETICOS SAMY SA', 'KR 51 No 14-52', '4487269', 'Fabricante', 'samy@samycosmetics.com'),
-(8600299972, 'Laboratorios de Cosméticos Vogue S.A.S', ' Kilómetro 7 vía Autopista Medellín – Par Industrial Interpa', '443 4660', 'Distribuidor', 'atc@loreal.com.co'),
-(8909050321, 'Beautyholics', ' Calle 10 # 58-59', '018000914990', 'Distribuidor', 'servicio.cliente@prebel.com.co'),
-(9004647945, 'INVERSIONES KAUTIVA S.A.S.', 'Cra 54 # 46 – 71  Loc 99 79', '4482015', 'Distribuidor', 'administracion@inversioneskautiva.com');
+INSERT INTO `roles` (`id`, `rol`) VALUES
+(1, 'admin'),
+(2, 'user');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `ID_Usuario` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Apellido` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Telefono` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Contraseña` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `Administrador_ID_Administrador` int NOT NULL,
-  PRIMARY KEY (`ID_Usuario`,`Administrador_ID_Administrador`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  `usuario` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `roles_id` int NOT NULL,
+  `estado` enum('activo','suspendido') DEFAULT 'activo',
+  PRIMARY KEY (`id`),
+  KEY `fk_usuarios_roles` (`roles_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Email`, `Telefono`, `Contraseña`, `Administrador_ID_Administrador`) VALUES
-(1, 'Stephanie', 'Martinez', 'smz021093@gmail.com', '3116250040', 'Mazu93.', 1),
-(2, 'Marcela', 'Quiroga', 'marceq0725@gmail.com', '3507740524', 'Marce123', 2),
-(3, 'Vendedor', '1', 'vendedor1@gmail.com', '3205428756', 'Vendedor1.', 0);
+INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `email`, `pass`, `roles_id`, `estado`) VALUES
+(1, 'Marcela Quiroga', 'Marceq', 'marceq0725@gmail.com', '$2y$10$/GrEv/Op6I5zTmaBPojRGe3K9dKVV8SnUMgU8iqEgx.W4ok39GQSW', 1, 'activo'),
+(2, 'Stephanie Martinez', 'StephanieM', 'smz021093@gmail.com', '$2y$10$5UXy27DFjq/C6V0LiZkgue.QZS97uRqxZcEvTRc02J6o3DNI.DFFO', 1, 'activo'),
+(3, 'Marity Castillo', 'mari52', 'm@gmail.com', '$2y$10$fxMSGeADxlI/n.4NeucuNehA7rhoYwSn5LlpyvmSBaVYnhpK8aWJi', 2, 'activo');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

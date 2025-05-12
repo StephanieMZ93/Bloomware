@@ -1,3 +1,6 @@
+/* =================================================== */
+/* ========== ESTILOS GENERALES Y BASE ============== */
+/* =================================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -22,6 +25,9 @@ body {
     display: block;
 }
 
+/* =================================================== */
+/* ====== ESTILOS PÁGINA FORMULARIO (producto.php) ==== */
+/* =================================================== */
 .form-page-container {
     max-width: 480px;
 }
@@ -36,394 +42,293 @@ body {
      max-height: 50px;
 }
 .form-page-container .header-subtitle {
-    font-size: 0.9em; 
+    font-size: 0.9em;
     color: #606770;
     margin: 0;
 }
 .form-page-container .regresar-link {
-    position: absolute; 
-    top: -10px; 
-    left: -15px; 
-    text-decoration: none; 
-    color: #1877f2; 
-    font-weight: 600; 
-    font-size: 0.95em; 
+    position: absolute;
+    top: -10px;
+    left: -15px;
+    text-decoration: none;
+    color: #1877f2;
+    font-weight: 600;
+    font-size: 0.95em;
     padding: 5px;
 }
-.form-page-container .regresar-link:hover { 
+.form-page-container .regresar-link:hover {
     text-decoration: underline; }
 
-/* CONTENEDOR Y ESTILOS DE ALERTAS */
+/* CONTENEDOR Y ESTILOS DE ALERTAS (Usado en producto.php y read.php) */
 .message-container {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 .alert {
-    padding: 12px 18px; 
-    margin-bottom: 15px; 
-    border: 1px solid transparent; 
-    border-radius: 5px; 
-    font-size: 0.95em; 
-    font-weight: 500; 
-    text-align: center; 
+    padding: 12px 18px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 0.95em;
+    font-weight: 500;
+    text-align: center;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
-.alert-success { 
-    color: #155724; 
-    background-color: #d4edda; 
-    border-color: #c3e6cb; 
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
 }
-.alert-danger { 
-    color: #721c24; 
-    background-color: #f8d7da; 
-    border-color: #f5c6cb; 
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }
-
 
 .form-page-container .formulario fieldset {
-    border: none; 
-    padding: 0; 
-    margin: 0 0 20px 0; 
+    border: none;
+    padding: 0;
+    margin: 0 0 20px 0;
     background-color: transparent;
 }
 .form-page-container .formulario legend {
-    width: 100%; 
-    font-size: 1.75em; 
-    font-weight: 600; 
-    color: #1c1e21; 
-    text-align: center; 
-    margin-bottom: 30px; 
-    padding: 0 0 15px 0; 
-    border-bottom: 1px solid #dadde1; 
+    width: 100%;
+    font-size: 1.75em;
+    font-weight: 600;
+    color: #1c1e21;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #dadde1;
     box-sizing: border-box;
 }
-.form-page-container .form-group { 
-    margin-bottom: 16px; 
+.form-page-container .form-group {
+    margin-bottom: 16px;
 }
-.form-page-container .formulario label {
-    display: block; 
-    margin-bottom: 5px; 
-    font-weight: 600; 
-    font-size: 0.9em; 
-    color: #606770; 
-    text-align: left; 
+.form-page-container .formulario label { /* Label para inputs normales */
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #606770;
+    text-align: left;
 }
 .form-page-container .formulario input[type="text"],
 .form-page-container .formulario input[type="number"],
-.form-page-container .formulario input[type="date"] { 
-    width: 100%; 
-    padding: 12px 14px; 
-    font-size: 1em; 
-    border: 1px solid #ccd0d5; 
-    border-radius: 6px; 
-    box-sizing: border-box; 
-    background-color: #f5f6f7; 
-    transition: border-color 0.2s ease, 
-    box-shadow 0.2s ease; 
+.form-page-container .formulario input[type="date"] {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1em;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #f5f6f7;
+    transition: border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
-.form-page-container .formulario input:focus { 
-    border-color: #1877f2; 
-    outline: none; 
-    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2); 
-    background-color: #fff; 
-}
-.form-page-container .btn-registro { 
-    display: block; 
-    width: 100%; 
-    padding: 12px 20px; 
-    background-color: #42b72a;
-    color: white; 
-    border: none; 
-    border-radius: 6px; 
-    cursor: pointer; 
-    font-size: 1.1em; 
-    font-weight: bold; 
-    text-decoration: none; 
-    transition: background-color 0.3s ease; 
-    margin: 10px auto 0; 
-}
-.form-page-container .btn-registro:hover { 
-    background-color: #36a420; 
+.form-page-container .formulario input:focus {
+    border-color: #1877f2;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+    background-color: #fff;
 }
 
-/* ====== ESTILOS PÁGINA TABLA (existentes.php) ====== */
-.table-page-container { 
-    max-width: 1200px; 
+/* Estilos para el Selector de Categoría en producto.php */
+.form-page-container .form-group.categoria-dropdown-group {
+    /* Mantiene el margen de .form-group */
 }
-.table-page-container .table-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 25px; 
-    padding-bottom: 15px; 
-    border-bottom: 1px solid #e0e0e0; 
-    gap: 15px; 
+.form-page-container .category-selector-container {
+    position: relative;
 }
-.table-page-container .table-header .logo--img { 
-    flex-shrink: 0; 
+.form-page-container .btn-category-select {
+    display: block; width: 100%; padding: 12px 14px; font-size: 1em; line-height: normal;
+    border: 1px solid #ccd0d5; border-radius: 6px; background-color: #f5f6f7; color: #1c1e21;
+    text-align: left; cursor: pointer; transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    position: relative; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.table-page-container .table-header h1 { 
-    margin: 0; 
-    font-size: 1.8em; 
-    color: #333; 
-    text-align: center; 
-    flex-grow: 1; 
+.form-page-container .btn-category-select:focus,
+.form-page-container .btn-category-select.active {
+    border-color: #1877f2; outline: none; box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2); background-color: #fff;
 }
-.table-page-container .header-actions { 
-    display: flex; 
-    gap: 10px; 
-    flex-shrink: 0; 
+.form-page-container .btn-category-select::after {
+    content: '▼'; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 0.8em; color: #606770; pointer-events: none;
 }
-.table-page-container .btn-accion { 
-    display: inline-block; 
-    padding: 8px 18px; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 5px; 
-    font-weight: bold; 
-    font-size: 0.9em; 
-    transition: background-color 0.2s ease; 
-    border: none; 
-    cursor: pointer; 
-    text-align: center; 
-    white-space: nowrap; 
+.form-page-container .btn-category-select.active::after { content: '▲'; }
+.form-page-container .category-dropdown {
+    display: none; position: absolute; top: calc(100% + 2px); left: 0; right: 0;
+    background-color: #fff; border: 1px solid #ccd0d5; border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 1000; max-height: 200px; overflow-y: auto; box-sizing: border-box;
 }
-.table-page-container .btn-regresar { 
-    background-color: #6c757d; 
+.form-page-container .category-dropdown.open { display: block; }
+.form-page-container .category-dropdown ul { list-style: none; margin: 0; padding: 0; }
+.form-page-container .category-dropdown li { padding: 10px 15px; cursor: pointer; font-size: 0.95em; color: #1c1e21; transition: background-color 0.1s ease; }
+.form-page-container .category-dropdown li:hover { background-color: #f0f2f5; }
+.form-page-container .category-dropdown li.selected { background-color: #e7f3ff; font-weight: 600; color: #1877f2; }
+
+.form-page-container .btn-registro {
+    display: block; width: 100%; padding: 12px 20px; background-color: #42b72a;
+    color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1.1em;
+    font-weight: bold; text-decoration: none; transition: background-color 0.3s ease; margin: 10px auto 0;
 }
-.table-page-container .btn-regresar:hover { 
-    background-color: #5a6268; 
+.form-page-container .btn-registro:hover { background-color: #36a420; }
+
+
+/* =================================================== */
+/* ====== ESTILOS PÁGINA TABLA (read.php) ====== */
+/* =================================================== */
+.table-page-container { max-width: 1200px; }
+
+.table-page-container .table-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #e0e0e0; gap: 15px;
 }
-.table-page-container .btn-nuevo { 
-    background-color: #28a745; 
+.table-page-container .table-header .logo--img { flex-shrink: 0; }
+.table-page-container .table-header h1 { margin: 0; font-size: 1.8em; color: #333; text-align: center; flex-grow: 1; }
+.table-page-container .header-actions { display: flex; gap: 10px; flex-shrink: 0; }
+
+.table-page-container .btn-accion { /* Estilo común para botones de acción en cabecera tabla y filtros */
+    display: inline-block; padding: 8px 18px; color: white; text-decoration: none;
+    border-radius: 5px; font-weight: bold; font-size: 0.9em;
+    transition: background-color 0.2s ease; border: none; cursor: pointer;
+    text-align: center; white-space: nowrap;
 }
-.table-page-container .btn-nuevo:hover { 
-    background-color: #218838; 
+.table-page-container .btn-regresar { background-color: #6c757d; }
+.table-page-container .btn-regresar:hover { background-color: #5a6268; }
+.table-page-container .btn-nuevo { background-color: #28a745; }
+.table-page-container .btn-nuevo:hover { background-color: #218838; }
+
+/* --- NUEVO: ESTILOS FORMULARIO DE FILTROS (en read.php) --- */
+.filter-form-container {
+    background-color: #fff; /* Fondo blanco si no usa .page-container */
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.table-page-container .table-wrapper { 
-    overflow-x: auto; width: 100%; 
+.filter-form .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px 20px;
+    margin-bottom: 20px;
 }
-.table-page-container table { 
-    width: 100%; 
-    min-width: 900px; 
-    border-collapse: collapse; 
-    font-size: 0.95em; 
+.filter-form .filter-group {
+    display: flex;
+    flex-direction: column;
 }
-.table-page-container th, .table-page-container td { 
-    border: 1px solid #ddd; 
-    padding: 14px 10px; 
-    text-align: left; 
-    vertical-align: middle; 
-    overflow-wrap: break-word; 
-    word-wrap: break-word; 
+.filter-form .filter-group label { /* Labels para los filtros */
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
 }
-.table-page-container th { 
-    background-color: #e9ecef; 
-    font-weight: bold; 
-    color: #333; 
-    white-space: nowrap; 
-    text-align: center; 
-    vertical-align: middle; 
+.filter-form .filter-group input[type="text"],
+.filter-form .filter-group input[type="number"],
+.filter-form .filter-group input[type="date"] {
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    width: 100%;
 }
-.table-page-container th:nth-child(1), .table-page-container td:nth-child(1) { 
-    width: 5%; 
-    text-align: center;
+.filter-form .filter-group.range-group input[type="number"],
+.filter-form .filter-group.range-group input[type="date"] {
+    /* Si los pones en línea, necesitarás ajustar su ancho */
 }
-.table-page-container th:nth-child(2), .table-page-container td:nth-child(2) { 
-    width: 24%; 
+.filter-form .filter-group.range-group span {
+    padding: 0 8px; align-self: center; line-height: 36px;
 }
-.table-page-container th:nth-child(3), .table-page-container td:nth-child(3) { 
-    width: 8%; 
-    text-align: 
-    right; 
+.filter-form .filter-actions {
+    display: flex; justify-content: flex-start; gap: 10px;
+    margin-top: 10px; padding-top: 15px; border-top: 1px solid #eee;
 }
-.table-page-container th:nth-child(4), .table-page-container td:nth-child(4) {
-    width: 10%; 
-    text-align: right; 
+.filter-form .btn-filtrar {
+    background-color: #007bff; color: white;
 }
-.table-page-container th:nth-child(5), .table-page-container td:nth-child(5) { 
-    width: 11%; 
+.filter-form .btn-filtrar:hover { background-color: #0056b3; }
+.filter-form .btn-limpiar-filtros {
+    background-color: #6c757d; color: white;
 }
-.table-page-container th:nth-child(6), .table-page-container td:nth-child(6) { 
-    width: 11%; 
-    text-align: right; 
-}
-.table-page-container th:nth-child(7), .table-page-container td:nth-child(7) {
-    width: 11%; 
-    text-align: right; 
-}
-.table-page-container th:last-child,  .table-page-container td:last-child  { 
-    width: 20%; 
-    text-align: center; 
-    white-space: nowrap; 
-}
+.filter-form .btn-limpiar-filtros:hover { background-color: #5a6268; }
+/* --- FIN ESTILOS FORMULARIO DE FILTROS --- */
+
+.table-page-container .table-wrapper { overflow-x: auto; width: 100%; }
+.table-page-container table { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 0.95em; }
+.table-page-container th, .table-page-container td { border: 1px solid #ddd; padding: 14px 10px; text-align: left; vertical-align: middle; overflow-wrap: break-word; word-wrap: break-word; }
+.table-page-container th { background-color: #e9ecef; font-weight: bold; color: #333; white-space: nowrap; text-align: center; vertical-align: middle; }
+.table-page-container th:nth-child(1), .table-page-container td:nth-child(1) { width: 5%; text-align: center; }
+.table-page-container th:nth-child(2), .table-page-container td:nth-child(2) { width: 24%; }
+.table-page-container th:nth-child(3), .table-page-container td:nth-child(3) { width: 8%; text-align: right; }
+.table-page-container th:nth-child(4), .table-page-container td:nth-child(4) { width: 10%; text-align: right; }
+.table-page-container th:nth-child(5), .table-page-container td:nth-child(5) { width: 11%; }
+.table-page-container th:nth-child(6), .table-page-container td:nth-child(6) { width: 11%; text-align: right; }
+.table-page-container th:nth-child(7), .table-page-container td:nth-child(7) { width: 11%; text-align: right; }
+.table-page-container th:last-child,  .table-page-container td:last-child  { width: 20%; text-align: center; white-space: nowrap; }
 
 /* Alertas de vencimiento en tabla */
-.table-page-container tbody tr.expiring-soon td { 
-    background-color: #fff8e1; 
-}
-.table-page-container tbody tr.expired td { 
-    background-color: #fdecea; 
-    opacity: 0.8; 
-}
-.table-page-container tbody tr.invalid-date td[data-label='Fecha Vencimiento'] { 
-    background-color: #e9ecef; 
-    font-style: italic; 
-    color: #dc3545; 
-}
-.table-page-container tbody tr.expiring-soon:hover td { 
-    background-color: #fff0c1;
-}
-.table-page-container tbody tr.expired:hover td { 
-    background-color: #fbdde2; 
-}
-.table-page-container tbody tr:not(.expiring-soon):not(.expired):hover td { 
-    background-color: #f1f1f1; 
-}
+.table-page-container tbody tr.expiring-soon td { background-color: #fff8e1; }
+.table-page-container tbody tr.expired td { background-color: #fdecea; opacity: 0.8; }
+.table-page-container tbody tr.invalid-date td[data-label='Fecha Vencimiento'] { background-color: #e9ecef; font-style: italic; color: #dc3545; }
+.table-page-container tbody tr.expiring-soon:hover td { background-color: #fff0c1; }
+.table-page-container tbody tr.expired:hover td { background-color: #fbdde2; }
+.table-page-container tbody tr:not(.expiring-soon):not(.expired):hover td { background-color: #f1f1f1; }
 
-.table-page-container tbody td button { 
-    display: inline-block; 
-    padding: 5px 10px; 
-    font-size: 0.85em; 
-    margin: 2px 3px; 
-    cursor: pointer; 
-    border: 1px solid transparent; 
-    border-radius: 4px; 
-    min-width: 75px; 
-    text-align: center; 
-    transition: opacity 0.2s ease; 
-}
-.table-page-container tbody td button:hover { 
-    opacity: 0.8; 
-}
-.table-page-container tbody td button:first-of-type { 
-    background-color: #f8d7da; 
-    border-color: #f5c6cb; 
-    color: #721c24; 
-}
-.table-page-container tbody td button:last-of-type { 
-    background-color: #cce5ff; 
-    border-color: #b8daff; 
-    color: #004085; 
-}
+.table-page-container tbody td button { display: inline-block; padding: 5px 10px; font-size: 0.85em; margin: 2px 3px; cursor: pointer; border: 1px solid transparent; border-radius: 4px; min-width: 75px; text-align: center; transition: opacity 0.2s ease; }
+.table-page-container tbody td button:hover { opacity: 0.8; }
+.table-page-container tbody td button:first-of-type { background-color: #f8d7da; border-color: #f5c6cb; color: #721c24; }
+.table-page-container tbody td button:last-of-type { background-color: #cce5ff; border-color: #b8daff; color: #004085; }
 
+
+/* =================================================== */
+/* ============== RESPONSIVIDAD ====================== */
+/* =================================================== */
 @media (max-width: 768px) {
-    .page-container { 
-        width: 90%; 
-        padding: 20px; 
-        margin: 20px auto; 
-    }
+    .page-container { width: 90%; padding: 20px; margin: 20px auto; }
     /* Formulario Tablet */
-    .form-page-container .formulario input, .form-page-container .btn-registro { f
-        ont-size: 0.95em;
-     }
-    .form-page-container .btn-registro { 
-        padding: 10px 25px; 
-    }
-    .form-page-container .formulario legend { 
-        font-size: 1.5em; 
-    }
+    .form-page-container .formulario input, .form-page-container .btn-registro,
+    .form-page-container .btn-category-select { font-size: 0.95em; }
+    .form-page-container .btn-registro { padding: 10px 25px; }
+    .form-page-container .formulario legend { font-size: 1.5em; }
+
+    /* Filtros Tablet */
+    .filter-form .filter-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
     /* Tabla Tablet */
-    .table-page-container .table-header { 
-        flex-direction: column; 
-        gap: 15px; 
-        align-items: center; 
-    }
-    .table-page-container .header-actions { 
-        width: 100%; 
-        justify-content: center;
-    }
-    .table-page-container .table-header h1 { 
-        font-size: 1.6em; 
-    }
-    .table-page-container table { 
-        font-size: 0.9em; 
-        min-width: 0; 
-    }
-    .table-page-container th, .table-page-container td { 
-        padding: 10px 8px;
-        width: auto; 
-        white-space: normal; 
-    }
-    .table-page-container th, .table-page-container th:last-child { 
-        text-align: center; 
-    }
-    .table-page-container td:last-child { 
-        text-align: center; 
-        white-space: nowrap; 
-    }
-    .table-page-container tbody td button { 
-        padding: 4px 8px; 
-        font-size: 0.8em; 
-        min-width: 65px;
-    }
+    .table-page-container .table-header { flex-direction: column; gap: 15px; align-items: center; }
+    .table-page-container .header-actions { width: 100%; justify-content: center; }
+    .table-page-container .table-header h1 { font-size: 1.6em; }
+    .table-page-container table { font-size: 0.9em; min-width: 0; }
+    .table-page-container th, .table-page-container td { padding: 10px 8px; width: auto !important; white-space: normal !important; }
+    .table-page-container th, .table-page-container th:last-child { text-align: center !important; }
+    .table-page-container td:last-child { text-align: center !important; white-space: nowrap !important; }
+    .table-page-container tbody td button { padding: 4px 8px; font-size: 0.8em; min-width: 65px;}
 }
+
 @media (max-width: 576px) {
-    body { 
-        font-size: 14px; 
-    }
-    .page-container { 
-        padding: 15px; 
-        width: 92%; 
-        margin: 15px auto;
-    }
+    body { font-size: 14px; }
+    .page-container { padding: 15px; width: 92%; margin: 15px auto;}
     /* Formulario Móvil */
-    .form-page-container .form-header { 
-        margin-bottom: 15px; 
-    }
-    .form-page-container .regresar-link {
-        top: -5px; 
-        left: -5px;
-    }
-    .form-page-container .formulario legend { 
-        font-size: 1.3em; 
-        margin-bottom: 20px; 
-        padding-bottom: 10px; 
-    }
-    .form-page-container .form-group { 
-        margin-bottom: 14px; 
-    }
-    .form-page-container .formulario label { 
-        font-size: 0.85em; 
-        margin-bottom: 4px;
-    }
-    .form-page-container .formulario input { 
-        padding: 10px 12px; 
-        font-size: 0.95em;
-    }
-    .form-page-container .btn-registro { 
-        font-size: 1em; 
-        padding: 11px 20px; 
-        width: 100%; 
-    }
+    .form-page-container .form-header { margin-bottom: 15px; }
+    .form-page-container .regresar-link { top: -5px; left: -5px;}
+    .form-page-container .formulario legend { font-size: 1.3em; margin-bottom: 20px; padding-bottom: 10px; }
+    .form-page-container .form-group { margin-bottom: 14px; }
+    .form-page-container .formulario label { font-size: 0.85em; margin-bottom: 4px;}
+    .form-page-container .formulario input,
+    .form-page-container .btn-category-select { padding: 10px 12px; font-size: 0.95em;}
+    .form-page-container .btn-registro { font-size: 1em; padding: 11px 20px; width: 100%; }
+
+    /* Filtros Móvil */
+    .filter-form .filter-grid { grid-template-columns: 1fr; }
+    .filter-form .filter-actions { flex-direction: column; }
+    .filter-form .filter-actions .btn-accion { width: 100%; margin-bottom: 5px; }
+    .filter-form .filter-actions .btn-accion:last-child { margin-bottom: 0; }
+
     /* Tabla Móvil */
-    .table-page-container { 
-        padding: 10px;
-    }
-    .table-page-container .table-header h1 { 
-        font-size: 1.4em; 
-    }
-    .table-page-container .btn-accion { 
-        font-size: 0.8em; 
-        padding: 7px 15px;
-    }
-    .table-page-container .table-wrapper { 
-        overflow-x: auto;
-    }
-    .table-page-container table { 
-        font-size: 0.85em; 
-        min-width: 500px; 
-    }
-    .table-page-container th, .table-page-container td { 
-        padding: 8px 6px; 
-        width: auto; 
-        white-space: revert; 
-    }
-    .table-page-container td:last-child { 
-        white-space: nowrap;
-    }
-    .table-page-container tbody td button { 
-        padding: 4px 8px; 
-        font-size: 0.8em; 
-        min-width: 65px;
-    }
+    .table-page-container { padding: 10px;}
+    .table-page-container .table-header h1 { font-size: 1.4em; }
+    .table-page-container .btn-accion { font-size: 0.8em; padding: 7px 15px;}
+    .table-page-container .table-wrapper { overflow-x: auto;}
+    .table-page-container table { font-size: 0.85em; min-width: 500px; }
+    .table-page-container th, .table-page-container td { padding: 8px 6px; width: auto !important; white-space: revert !important; }
+    .table-page-container td:last-child { white-space: nowrap !important;}
+    .table-page-container tbody td button { padding: 4px 8px; font-size: 0.8em; min-width: 65px;}
 }
