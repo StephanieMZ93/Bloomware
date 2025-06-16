@@ -1,0 +1,269 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e1e7e5; /* Fondo general ligeramente gris */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal de la página */
+.container {
+    max-width: 1200px; /* Ancho máximo de la página */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0 20px; /* Espacio a los lados */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 20px; 
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+    background-color: #fff; 
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+.logo--img {
+    max-height: 50px; /* Ajusta la altura del logo */
+    width: auto;
+}
+
+.cerrar-sesion {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #dc3545; /* Rojo para cerrar sesión */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.cerrar-sesion:hover {
+    background-color: #c82333;
+}
+
+/*  Contenedor de Tarjetas  */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas pasen a la siguiente línea */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 30px; 
+    padding: 30px 0; 
+}
+
+/* Estilos de Tarjeta Individual */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Asegura que el contenido no se salga */
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-bottom: 15px; /* Añadido padding inferior para espaciar botones del borde */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen dentro de la tarjeta  */
+.card img {
+    display: block;
+    max-width: 60%;   
+    max-height: 100px; 
+    margin: 20px auto 15px auto; 
+    object-fit: contain; 
+    box-sizing: border-box; 
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    padding: 0 20px 15px 20px; 
+    text-align: center; /* Centra el título */
+    flex-grow: 1; /* Permite que este área crezca si es necesario */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; /* Centra el título verticalmente en su espacio */
+}
+
+.card-title {
+    margin-top: 0; 
+    margin-bottom: 0; 
+    font-size: 1.15em; 
+    color: #333;
+    font-weight: 600;
+}
+
+
+.card-actions {
+    padding: 15px 15px 0 15px; 
+    border-top: 1px solid #eee;
+    margin-top: 15px; 
+    display: flex;
+    justify-content: space-between; 
+    gap: 8px; 
+}
+
+/* Estilo para los enlaces */
+.action-link {
+    display: inline-block;
+    padding: 5px 8px; 
+    background-color: #f0f0f0;
+    color: #007bff; 
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.75em; 
+    font-weight: normal; 
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    flex-grow: 1; 
+    white-space: nowrap; 
+    overflow: hidden;     
+    text-overflow: ellipsis; 
+}
+
+.action-link:hover {
+    background-color: #e2e6ea;
+    border-color: #aaa;
+    color: #0056b3;
+}
+
+/* --- Responsividad --- */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .header {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 20px;
+    }
+    .card {
+        width: calc(50% - 15px); 
+    }
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+    .header {
+        flex-direction: column; 
+        gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .card-container {
+        gap: 20px; 
+    }
+    .card {
+        width: calc(100% - 20px); 
+        max-width: 320px; 
+    }
+    .card img {
+        max-height: 90px; /* Imagen un poco más pequeña en móvil */
+        max-width: 50%;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .card-title {
+        font-size: 1.1em;
+    }
+    .action-link {
+        font-size: 0.7em; 
+        padding: 4px 6px;
+    }
+}
+
+/* Estilos del Modal */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.modal-overlay.modal--open {
+    display: flex; /* Se muestra con Flexbox */
+}
+.modal-content {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    width: 100%;
+    max-width: 1100px; 
+    max-height: 90vh;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+}
+.modal-close-btn {
+    position: absolute; 
+    top: 10px; 
+    right: 15px; 
+    background: none; 
+    border: none;
+    font-size: 2.5rem; 
+    color: #888; 
+    cursor: pointer; 
+    line-height: 1; 
+    padding: 0;
+}
+.modal-close-btn:hover { 
+    color: #333; 
+}
+.modal-content h2 { 
+    text-align: center; 
+    margin-top: 10px; 
+    margin-bottom: 20px; 
+    color: #444; 
+    font-size: 1.5em; 
+}
+.table-wrapper { 
+    overflow-x: auto; 
+    width: 100%; 
+} 
+.modal-content table { 
+    width: 100%; 
+    min-width: 800px; 
+    border-collapse: collapse; 
+    font-size: 0.9em;
+}
+.modal-content th, .modal-content td { 
+    border: 1px solid #e0e0e0; 
+    padding: 10px 12px; 
+    text-align: left; 
+    vertical-align: middle; 
+}
+.modal-content th { 
+    background-color: #f8f9fa; 
+    font-weight: 600; 
+    text-align: center; 
+}
+
+
+.btn-ver-tabla {
+     background-color: #17a2b8; 
+     border-color: #17a2b8;
+     color: white;
+}
+ .btn-ver-tabla:hover {
+     background-color: #138496;
+     border-color: #117a8b;
+     color: white;
+ }

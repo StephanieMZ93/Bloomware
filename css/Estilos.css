@@ -1,0 +1,152 @@
+/* Archivo: css/Estilos.css (o css/EstilosLogin.css) */
+
+/* --- Reseteo Básico y Estilos Globales --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Un fondo gris claro suave */
+    color: #1c1e21; /* Color de texto principal oscuro (similar a Facebook) */
+    display: flex;
+    flex-direction: column; /* Para que el footer quede abajo */
+}
+
+/* --- Contenedor Principal del Login --- */
+.container.login-container { /* Usamos .login-container para ser más específicos */
+    width: 100%;
+    max-width: 400px; /* Ancho del formulario de login */
+    margin: auto; /* Centra vertical y horizontalmente cuando body es flex */
+    padding: 30px 35px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra tipo tarjeta */
+    box-sizing: border-box;
+    text-align: center; /* Centra el logo dentro del header */
+}
+
+/* --- Cabecera con el Logo --- */
+.login-container header {
+    margin-bottom: 25px;
+}
+
+.logo--img {
+    max-height: 60px; /* Ajusta según el tamaño de tu logo */
+    width: auto;
+    display: inline-block; /* Para centrar con text-align en el header */
+}
+
+/* --- Formulario de Login --- */
+.Formulario {
+    display: flex;
+    flex-direction: column; /* Elementos del formulario apilados */
+    gap: 15px; /* Espacio entre grupos de label/input y el botón */
+}
+
+/* --- Etiquetas de los Campos --- */
+.formulario__label-txt {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #606770; /* Gris oscuro para las etiquetas */
+    text-align: left; /* Etiquetas alineadas a la izquierda */
+    display: flex; /* Para alinear icono y texto */
+    align-items: center; /* Centrar verticalmente icono y texto */
+    gap: 8px; /* Espacio entre icono y texto del label */
+    margin-bottom: -5px; /* Reduce un poco el espacio por defecto si hay mucho */
+}
+
+/* Iconos (asumiendo que usas una fuente de iconos como FontAwesome o similar via Font.css) */
+/* Si no usas iconos, puedes quitar estas referencias y los <span> */
+.formulario__label-txt [class^="icon-"], /* Estilo general para iconos */
+.formulario__label-txt [class*=" icon-"] {
+    font-size: 1.1em; /* Tamaño del icono */
+    color: #606770; /* Color del icono */
+}
+
+/* --- Campos de Entrada --- */
+.formulario__input-txt {
+    width: 100%;
+    padding: 12px 15px; /* Padding interno */
+    font-size: 1em;
+    border: 1px solid #dddfe2; /* Borde gris claro (similar a Facebook) */
+    border-radius: 6px;
+    box-sizing: border-box; /* Padding y borde dentro del ancho total */
+    background-color: #f5f6f7; /* Fondo muy claro para inputs */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario__input-txt:focus {
+    border-color: #1877f2; /* Azul de Facebook al enfocar */
+    outline: none; /* Quitar el outline por defecto del navegador */
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2); /* Sombra de foco sutil */
+    background-color: #fff; /* Fondo blanco al enfocar */
+}
+
+/* --- Mensaje de Error --- */
+.error-message {
+    color: #D8000C; /* Rojo oscuro para el texto del error */
+    background-color: #FFD2D2; /* Fondo rojo pálido */
+    border: 1px solid #D8000C; /* Borde rojo */
+    padding: 12px;
+    margin-bottom: 10px; /* Espacio si aparece antes del botón */
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* --- Botón de Iniciar Sesión --- */
+.iniciar-sesion {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #1877f2; /* Azul de Facebook */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    margin-top: 5px; /* Pequeño espacio sobre el botón */
+}
+
+.iniciar-sesion:hover {
+    background-color: #166fe5; /* Azul un poco más oscuro al pasar el mouse */
+}
+
+/* --- Pie de Página --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85em;
+    color: #606770; /* Gris para el texto del pie de página */
+    margin-top: auto; /* Empuja el footer hacia abajo si body es flex y hay poco contenido */
+}
+
+footer p i {
+    font-style: normal; /* Quitar cursiva si no se desea */
+}
+
+/* --- Responsividad (Opcional, pero recomendada) --- */
+@media (max-width: 480px) {
+    .container.login-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 25px;
+        box-shadow: none; /* Quitar sombra en móviles pequeños */
+        border: 1px solid #dddfe2; /* Borde sutil en lugar de sombra */
+    }
+
+    .logo--img {
+        max-height: 50px;
+    }
+
+    .formulario__input-txt {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .iniciar-sesion {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+}

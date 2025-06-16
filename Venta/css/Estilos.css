@@ -1,0 +1,444 @@
+/* Archivo: css/EstilosVenta.css */
+
+/* ====================================================== */
+/* === ESTILOS GENERALES Y BASE PARA MÓDULO DE VENTAS === */
+/* ====================================================== */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Contenedor principal de página */
+.page-container.form-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent; /* El fondo ya está en el body */
+}
+
+/* Cabecera de la página de venta */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.form-header .regresar-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    font-size: 0.95em;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+.form-header .regresar-link:hover { background-color: #e9ecef; }
+.form-header .logo--img { max-height: 40px; width: auto; }
+
+/* Contenedor de mensajes de alerta */
+.message-container { margin-bottom: 20px; }
+.alert {
+    padding: 12px 18px; margin-bottom: 15px; border: 1px solid transparent;
+    border-radius: 6px; font-size: 0.9em; font-weight: 500;
+    text-align: left; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.alert-success { color: #0f5132; background-color: #d1e7dd; border-color: #badbcc; }
+.alert-danger { color: #842029; background-color: #f8d7da; border-color: #f5c2c7; }
+
+
+/* Layout principal de la venta (selector y carrito) */
+.venta-layout { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;}
+
+/* Estilo "tarjeta" para las secciones internas */
+.card-layout {
+    background-color: #ffffff;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.producto-selector-section { flex: 1; min-width: 300px; max-width: 420px; }
+.carrito-section { flex: 1.8; min-width: 400px; }
+
+/* Títulos de las secciones internas (excepto carrito que tiene estilo propio) */
+.producto-selector-section h3,
+.checkout-section h3 {
+    margin-top: 0; font-size: 1.1em;
+    color: #1d2129; margin-bottom: 18px;
+    padding-bottom: 10px; border-bottom: 1px solid #dddfe2;
+    font-weight: 600;
+}
+
+/* Formularios y sus elementos */
+.formulario-inline { display: flex; flex-direction: column; gap: 12px; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.85em; color: #606770;}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%; padding: 10px 14px; box-sizing: border-box;
+    border: 1px solid #ccd0d5; border-radius: 6px; font-size: 0.95em;
+    background-color: #f5f6f7; color: #1c1e21;
+}
+.form-group input[type="number"]#cantidad_seleccionada { width: 80px; max-width: 100%; }
+.form-group input:focus, .form-group select:focus {
+    border-color: #1877f2; outline: 0;
+    box-shadow: 0 0 0 1px rgba(24,119,242,0.5);
+    background-color: #fff;
+}
+
+/* ================================= */
+/* === ESTILOS DEL CARRITO === */
+/* ================================= */
+.carrito-titulo-con-imagen {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dddfe2;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1d2129;
+}
+
+.carrito-titulo-con-imagen h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.carrito-icono { /* Estilo para el ICONO PEQUEÑO al lado del título */
+    width: 28px;       /* AJUSTA EL TAMAÑO DEL ICONO */
+    height: 28px;      /* AJUSTA EL TAMAÑO DEL ICONO */
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* ILUSTRACIÓN GRANDE DEL CARRITO (cuando está vacío) */
+.carrito-ilustracion-contenedor {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.carrito-ilustracion-principal { /* Estilo para la ILUSTRACIÓN GRANDE */
+    max-width: 180px;  /* AJUSTA EL TAMAÑO DE LA ILUSTRACIÓN GRANDE */
+    height: auto;
+    display: inline-block;
+}
+
+/* MENSAJE CUANDO EL CARRITO ESTÁ VACÍO */
+.carrito-vacio-placeholder {
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-top: 0;
+}
+
+.carrito-vacio-placeholder p {
+    font-size: 0.95em;
+    color: #606770;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* TABLA DE ITEMS DEL CARRITO (cuando hay productos) */
+.carrito-items {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+.carrito-items table {
+    width: 100%;
+    min-width: 380px;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 0.85em;
+}
+.carrito-items th, .carrito-items td {
+    border: 1px solid #e7e7e7;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+.carrito-items th {
+    background-color: #f0f2f5;
+    font-weight: 500;
+    color: #606770;
+}
+.carrito-items td:nth-child(2), /* Cantidad */
+.carrito-items td:nth-child(3), /* P. Unit. */
+.carrito-items td:nth-child(4) { /* Subtotal */
+    text-align: right;
+}
+.carrito-items td:last-child { /* Acción */
+    text-align: center;
+}
+
+.carrito-total {
+    text-align: right;
+    font-size: 1.05em;
+    font-weight: bold;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #dddfe2;
+}
+/* ================================= */
+/* === FIN ESTILOS DEL CARRITO === */
+/* ================================= */
+
+/* Botones */
+.btn-agregar-carrito {
+    background-color: #007bff;
+    color: white;
+    width: 100%; margin-top: 5px; font-size: 0.9em; padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.btn-agregar-carrito:hover { background-color: #0056b3; }
+
+.btn-remover-item {
+    background-color: transparent; color: #dc3545; border:1px solid #dc3545;
+    cursor:pointer; padding: 2px 6px; font-size:0.8em; border-radius:3px; line-height: 1;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-remover-item:hover { background-color: #dc3545; color: white;}
+
+.btn-vaciar-carrito {
+    background-color: #f5f6f7; color: #4b4f56; border: 1px solid #ccd0d5;
+    font-size: 0.8em; padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.btn-vaciar-carrito:hover { background-color: #e9ecef; }
+
+/* Sección de Finalizar Venta */
+.checkout-section-wrapper { width: 100%; display: flex; justify-content: center; } /* Si usas este wrapper */
+.checkout-section {
+    width: 100%;
+    max-width: 700px; /* Ancho para la sección de finalizar */
+    margin-top: 20px; /* Espacio si está después del carrito */
+}
+.btn-finalizar-compra {
+    background-color: #28a745; font-size: 1em; padding: 10px 20px;
+    /* width: 100%; */ /* Quitado para que style="width:auto" funcione */
+    /* display: block; */ /* Quitado para que style="display:block" funcione */
+    /* margin: 20px 0 0 0; */ /* Quitado para que style="margin..." funcione */
+    color: white; border: none; border-radius: 6px;
+    cursor: pointer; font-weight: 600; text-decoration: none; transition: background-color 0.3s ease;
+}
+.btn-finalizar-compra:hover { background-color: #218838; }
+
+
+/* =================================================== */
+/* ============== RESPONSIVIDAD ====================== */
+/* =================================================== */
+@media (max-width: 1024px) {
+    .page-container.form-page-container {
+        max-width: 98%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+     .venta-layout { gap: 15px; }
+}
+
+@media (max-width: 768px) {
+    .form-header { flex-direction: column; gap: 10px; }
+    .form-header .regresar-link { align-self: flex-start; }
+    .form-header .logo--img { max-height: 35px; }
+
+    .page-container.form-page-container {
+        width: auto; margin-left: 10px; margin-right: 10px; padding: 15px;
+    }
+    .card-layout { padding: 15px; }
+
+    .venta-layout { flex-direction: column; }
+    .producto-selector-section, .carrito-section { min-width: 100%; }
+
+    .producto-selector-section h3,
+    .checkout-section h3,
+    .carrito-titulo-con-imagen {
+        font-size: 1.05em;
+    }
+    .form-group input, .form-group select { font-size: 0.9em; }
+    .carrito-items table { font-size: 0.85em; }
+    .carrito-items th, .carrito-items td { padding: 7px 8px; }
+}
+
+@media (max-width: 576px) {
+    body { font-size: 13px; }
+
+    .carrito-titulo-con-imagen {
+        gap: 8px;
+        font-size: 1em;
+    }
+    .carrito-icono {
+        width: 24px;
+        height: 24px;
+    }
+    .carrito-ilustracion-principal {
+        max-width: 140px;
+    }
+    .carrito-ilustracion-contenedor {
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+}
+/* --- COPIAR DESDE AQUÍ SI ES UN ARCHIVO NUEVO O AÑADIR A UNO EXISTENTE --- */
+
+/* === ESTILOS PARA HISTORIAL.PHP === */
+
+/* === ESTILOS PARA HISTORIAL.PHP === */
+
+.historial-container {
+    background-color: #ffffff;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    margin-top: 20px;
+    /* Mantenemos un max-width para el contenedor general, pero la tabla no necesariamente lo llenará */
+    max-width: 900px; /* Puedes ajustar esto */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.historial-container h2 {
+    text-align: center;
+    color: #1c1e21;
+    margin-bottom: 20px;
+    font-size: 1.7em;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* Importante si la tabla se vuelve más ancha que el contenedor en móviles */
+    margin-top: 10px;
+    /* Para centrar la tabla si es más angosta que el wrapper */
+    display: flex;         /*  <-- NUEVO: Usar flex para centrar */
+    justify-content: center; /* <-- NUEVO: Centra el contenido flex (la tabla) */
+}
+
+.historial-table {
+    /* width: 100%; */   /* <<< CAMBIO: Comentamos o eliminamos el width: 100% */
+    border-collapse: collapse;
+    font-size: 0.88em;
+    /* La tabla ahora tomará el ancho de su contenido + padding */
+    /* margin-left: auto; */ /* Ya no es necesario aquí si .table-wrapper lo centra */
+    /* margin-right: auto; */
+}
+
+.historial-table th,
+.historial-table td {
+    padding: 10px 12px; /* Un padding horizontal un poco más generoso ahora que la tabla no es forzada a 100% */
+    text-align: center;
+    border-bottom: 1px solid #e7e7e7;
+    vertical-align: middle;
+    white-space: nowrap; /* Mantenemos esto para evitar saltos de línea feos */
+}
+
+.historial-table th {
+    background-color: #f0f2f5;
+    font-weight: bold;
+    color: #33373a;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+/* Alineación específica de columnas */
+.historial-table th:nth-child(2), /* Fecha */
+.historial-table td:nth-child(2) {
+    text-align: left;
+    /* white-space: normal; */ /* Puedes decidir si la fecha debe romperse o no */
+}
+
+.historial-table th:nth-child(3), /* Total Venta */
+.historial-table td:nth-child(3) {
+    text-align: right;
+}
+.historial-table th:nth-child(4), /* Artículos Vendidos */
+.historial-table td:nth-child(4) {
+    /* text-align: center; ya es el default */
+}
+.historial-table th:nth-child(1), /* ID */
+.historial-table td:nth-child(1) {
+    /* text-align: center; ya es el default */
+}
+
+
+.historial-table tbody tr:hover {
+    background-color: #f5f6f7;
+}
+
+.historial-table td.acciones-cell a {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+}
+.historial-table td.acciones-cell a:hover {
+    background-color: #0056b3;
+}
+
+
+.historial-table td.no-ventas-message {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #6c757d;
+    font-size: 1em;
+    white-space: normal;
+}
+
+/* ELIMINAMOS LOS ANCHOS DE COLUMNA FIJOS/PORCENTUALES TEMPORALMENTE */
+/* Esto permitirá que las columnas se ajusten a su contenido */
+/*
+.historial-table th:nth-child(1), .historial-table td:nth-child(1) { width: 8%; min-width: 60px; }
+.historial-table th:nth-child(2), .historial-table td:nth-child(2) { width: 28%; min-width: 150px;}
+.historial-table th:nth-child(3), .historial-table td:nth-child(3) { width: 22%; min-width: 120px;}
+.historial-table th:nth-child(4), .historial-table td:nth-child(4) { width: 20%; min-width: 100px;}
+.historial-table th:nth-child(5), .historial-table td:nth-child(5) { width: 22%; min-width: 110px;}
+*/
+
+@media (max-width: 850px) {
+    .historial-container {
+        max-width: 98%;
+    }
+    /* Si la tabla se vuelve muy ancha para el .table-wrapper en móviles,
+       el overflow-x: auto; del wrapper se encargará de la barra de scroll. */
+}
+
+@media (max-width: 768px) {
+    .historial-table th,
+    .historial-table td {
+        padding: 8px 5px;
+        font-size: 0.82em;
+        white-space: normal; /* Permitir que todo se rompa en líneas */
+    }
+    .historial-container h2 {
+        font-size: 1.4em;
+    }
+}

@@ -1,0 +1,208 @@
+/* Estilos para detalle_venta_vista.php y update_detalle_item_form.php */
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.form-header .regresar-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    font-size: 0.95em;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+.form-header .regresar-link:hover { background-color: #e9ecef; }
+.form-header .logo--img { max-height: 40px; width: auto; }
+ Hereda de IPrincipal.css: .page-container, .form-header, .logo--img, .regresar-link, .table, .card-layout */
+
+.detalle-venta-container,
+.form-update-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.detalle-venta-container h2,
+.form-update-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.info-venta {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-venta p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.info-venta p strong {
+    color: #333;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* Para tablas anchas en móviles */
+}
+
+/* Ajustes a la tabla heredada si es necesario */
+.detalle-venta-container table th,
+.detalle-venta-container table td {
+    text-align: left;
+    padding: 10px 12px;
+    vertical-align: middle;
+}
+
+.detalle-venta-container table th {
+    background-color: #f8f9fa; /* Un gris claro para encabezados */
+    color: #495057;
+}
+
+.acciones-detalle .btn-accion {
+    padding: 5px 8px;
+    font-size: 0.9em;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none; /* Para los que son links */
+    display: inline-block; /* Para que los forms se alineen */
+}
+
+.btn-update {
+    background-color: #5cb85c; /* Verde */
+}
+.btn-update:hover {
+    background-color: #4cae4c;
+}
+
+.btn-delete {
+    background-color: #d9534f; /* Rojo */
+}
+.btn-delete:hover {
+    background-color: #c9302c;
+}
+
+.total-venta {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.acciones-footer {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.acciones-footer .btn-accion {
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-imprimir {
+    background-color: #007bff; /* Azul Bootstrap */
+}
+.btn-imprimir:hover {
+    background-color: #0069d9;
+}
+
+.btn-regresar {
+    background-color: #6c757d; /* Gris Bootstrap */
+}
+.btn-regresar:hover {
+    background-color: #5a6268;
+}
+
+/* Estilos para formulario de actualización */
+.form-update-container .formulario .form-group {
+    margin-bottom: 20px;
+}
+
+.form-update-container .formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-update-container .formulario input[type="number"],
+.form-update-container .formulario input[type="text"] { /* Si tuvieras texto */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+.form-update-container .formulario input[type="number"]:focus,
+.form-update-container .formulario input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+
+.form-update-container .formulario small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85em;
+    color: #777;
+}
+
+.btn-submit-update {
+    background-color: #28a745; /* Verde más oscuro para submit */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: block;
+    width: auto;
+    margin: 20px auto 0;
+}
+.btn-submit-update:hover {
+    background-color: #218838;
+}
+
+/* Alertas (puedes tenerlas globales) */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
