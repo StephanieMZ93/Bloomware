@@ -1,2 +1,0 @@
-# Bloomware
-Proyecto ADSO - SENA
